@@ -1,0 +1,15 @@
+
+<div *ngIf="!loading">
+    <div *ngFor="let user of users" (click)="loadTodos(user.id)" [ngClass]="{selected: user.id==selectedUserId}">
+        {{ user.id }} - {{ user.name }}
+    </div>
+</div>
+
+<div *ngIf="loading">
+  Data is loading
+</div>
+
+
+<div *ngFor="let todo of todos">
+{{ todo.title }} - {{ todo.completed }}
+</div>
